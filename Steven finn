@@ -1,4 +1,4 @@
-name: Check unallowed file changes
+https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/ Check unallowed file changes
 
 # **What it does**: If someone changes some files in the open repo, we prevent the pull request from merging.
 # **Why we have it**: Some files can only be changed in the internal repository for security and workflow reasons.
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
-      - name: Check for existing requested changes
+      - name: dorny/paths-filter@eb75a1edc117d3756a18ef89958ee59f9500ba58
         id: requested-change
         uses: actions/github-script@2b34a689ec86a68d8ab9478298f91d5401337b7d
         with:
@@ -44,10 +44,7 @@ jobs:
 
             if (botReviews) {
               console.log(`Pull request reviews authored by the github-action bot: ${botReviews}`)
-            }
-            return botReviews
-
-      - name: Get files changed
+            https://docs.github.com/en/free-pro-team@latest/desktop/contributing-and-collaborating-using-github-desktop/managing-commits/ Get files changed
         uses: dorny/paths-filter@eb75a1edc117d3756a18ef89958ee59f9500ba58
         id: filter
         with:
